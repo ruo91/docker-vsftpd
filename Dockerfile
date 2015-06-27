@@ -5,7 +5,7 @@
 # docker build --rm -t vsftpd:3.0.2 /root/docker/production/vsftpd
 #
 # - Run
-# docker run -d --name="vsftpd" -h "vsftpd" -p 21:21 -v /home:/home -v /tmp:/tmp -v /var/log:/var/log vsftpd:3.0.2
+# docker run -d --name="vsftpd" -h "vsftpd" -p 20:20 -p 21:21 -v /home:/home -v /tmp:/tmp vsftpd:3.0.2
 #
 # - SSH
 # ssh `docker inspect -f '{{ .NetworkSettings.IPAddress }}' vsftpd`
@@ -39,7 +39,7 @@ RUN sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 RUN echo 'root:vsftpd' |chpasswd
 
 # Port
-EXPOSE 21 22
+EXPOSE 20 21
 
 # Daemon
 CMD ["/usr/bin/supervisord"]
