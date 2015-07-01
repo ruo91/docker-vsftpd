@@ -22,7 +22,7 @@ RUN mkdir /etc/vsftpd \
 ADD conf/vsftpd.pam                        /etc/pam.d/vsftpd
 ADD conf/vsftpd.conf                       /etc/vsftpd.conf
 ADD conf/vsftp_virtual_user.sh             /usr/bin/vsftpd_virtual_user
-RUN chmod 755 /opt/vsftp_virtual_user.sh
+RUN chmod a+x /usr/bin/vsftpd_virtual_user
 
 # Supervisor
 RUN mkdir -p /var/log/supervisor
