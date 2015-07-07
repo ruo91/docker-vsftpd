@@ -21,7 +21,7 @@ RUN mkdir /etc/vsftpd \
 
 ADD conf/vsftpd.pam                        /etc/pam.d/vsftpd
 ADD conf/vsftpd.conf                       /etc/vsftpd.conf
-ADD conf/vsftp_virtual_user.sh             /usr/bin/vsftpd_virtual_user
+ADD conf/vsftpd_virtual_user.sh             /usr/bin/vsftpd_virtual_user
 RUN chmod a+x /usr/bin/vsftpd_virtual_user
 
 # Supervisor
