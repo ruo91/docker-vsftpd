@@ -21,7 +21,7 @@
 
 ### Create a virtual users
 ```sh
-# docker exec vsftpd vsftpd_virtual_user ruo91 123456
+# docker exec vsftpd vsftpd_vuser.sh ruo91 123456
 Adding password for user ruo91
 
 User Name          : ruo91

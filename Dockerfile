@@ -19,10 +19,10 @@ RUN mkdir /etc/vsftpd \
  && mkdir -p /var/run/vsftpd/empty \
  && useradd --home /home --gid nogroup -m --shell /bin/false vsftpd
 
-ADD conf/vsftpd.pam                        /etc/pam.d/vsftpd
-ADD conf/vsftpd.conf                       /etc/vsftpd.conf
-ADD conf/vsftpd_virtual_user.sh             /usr/bin/vsftpd_virtual_user
-RUN chmod a+x /usr/bin/vsftpd_virtual_user
+ADD conf/vsftpd.pam /etc/pam.d/vsftpd
+ADD conf/vsftpd.conf /etc/vsftpd.conf
+ADD conf/vsftpd_vuser.sh /bin/vsftpd_vuser.sh
+RUN chmod a+x /bin/vsftpd_vuser.sh
 
 # Supervisor
 RUN mkdir -p /var/log/supervisor
