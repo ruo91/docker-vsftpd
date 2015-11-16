@@ -29,8 +29,6 @@ RUN mkdir -p /var/log/supervisor
 ADD conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD conf/vsftpd_pid.sh /bin/vsftpd_pid.sh
 RUN chmod a+x /bin/vsftpd_pid.sh
-# Create an empty passwd file
-RUN touch /etc/vsftpd/vuser.passwd
 # Port
 EXPOSE 20 21
 
