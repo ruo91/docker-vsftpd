@@ -19,6 +19,13 @@
 -p 21:21 -v /data/ftpdata:/home -v /tmp:/tmp vsftpd:3.0.2
 ```
 
+### To persist user list:
+
+```sh
+# docker run -d --name="vsftpd" -h "vsftpd" \
+-p 21:21 -v /data/ftpdata:/home -v /data/ftpconfig:/etc/vsftpd/ -v /tmp:/tmp vsftpd:3.0.2
+```
+
 ### Create a virtual users
 ```sh
 # mkdir /data/ftpdata/ruo91 
