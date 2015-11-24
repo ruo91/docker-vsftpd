@@ -27,9 +27,11 @@ RUN chmod a+x /bin/vsftpd_vuser.sh
 # Supervisor
 RUN mkdir -p /var/log/supervisor
 ADD conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
+ADD conf/vsftpd_pid.sh /bin/vsftpd_pid.sh
+RUN chmod a+x /bin/vsftpd_pid.sh
 # Port
 EXPOSE 20 21
 
 # Daemon
-CMD ["/usr/bin/supervisord"]
+ENTRYPOINT ["/bin/vsftpd_pid.sh"]
+#CMD ["/usr/bin/supervisord"]
