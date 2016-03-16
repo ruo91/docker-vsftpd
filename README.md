@@ -26,7 +26,7 @@
 -p 21:21 -v /data/ftpdata:/home -v /data/ftpconfig:/etc/vsftpd/ -v /tmp:/tmp vsftpd:3.0.2
 ```
 
-### Create a virtual users
+### Create a virtual user
 ```sh
 # mkdir /data/ftpdata/ruo91 
 # docker exec vsftpd vsftpd_vuser.sh ruo91 123456
